@@ -1,9 +1,17 @@
 
+var form = document.getElementsByTagName('form')[0],
+	ingredient = document.getElementsByTagName('input')[0],
+	listAll = document.getElementsByTagName('ul')[0],
+	btnResult = document.getElementsByTagName('input')[2],
+	resultCount = document.getElementsByTagName('h2')[1],
+	arrIngredient = [], AllPermutator = [], magicalPermutator = [],
+	tmpArr, magicalAction, listIngredient;
+
 function permutator(inputArr) {
-	var results = [];
+	let results = [];
 	function permute(arr, memo) {
 		var cur, memo = memo || [];
-		for (var i = 0; i < arr.length; i++) {
+		for (let i = 0; i < arr.length; i++) {
 			cur = arr.splice(i, 1);
 			if (arr.length === 0) {
 				results.push(memo.concat(cur));
@@ -16,4 +24,3 @@ function permutator(inputArr) {
 	return permute(inputArr);
 }
 
-var text = permutator(['A','A','B']);
