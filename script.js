@@ -37,4 +37,24 @@ form.addEventListener('submit', function(e){
 	btnResult.style.display = 'block';
 }, false);
 
+btnResult.addEventListener('click', function(e){
+
+	AllPermutator = permutator(arrIngredient);
+	//console.log(AllPermutator);
+	for(let i = 0; i < AllPermutator.length; i++){
+		flag = 1;
+		for(let x = 0; x < AllPermutator[i].length - 1; x++){
+			if(AllPermutator[i][x] == AllPermutator[i][x + 1]){
+				flag = 2;	
+			}
+		}
+		if(flag == 1){
+			magicalPermutator.push(AllPermutator[i]);
+		}
+	}
+	//console.log(magicalPermutator);
+	resultCount.innerText = magicalPermutator.length;
+	magicalPermutator = [];
+}, false);
+
 
