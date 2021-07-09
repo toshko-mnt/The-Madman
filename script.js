@@ -24,3 +24,17 @@ function permutator(inputArr) {
 	return permute(inputArr);
 }
 
+form.addEventListener('submit', function(e){
+	e.preventDefault();
+
+	tmpArr = ingredient.value.split(',',2);
+	magicalAction = tmpArr[1];
+	arrIngredient.push(magicalAction);
+
+	listIngredient = document.createElement('li');
+	listIngredient.innerText = ingredient.value;
+	listAll.appendChild(listIngredient);
+	btnResult.style.display = 'block';
+}, false);
+
+
