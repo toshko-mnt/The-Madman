@@ -4,8 +4,7 @@ var form = document.getElementsByTagName('form')[0],
 	listAll = document.getElementsByTagName('ul')[0],
 	btnResult = document.getElementsByTagName('input')[2],
 	resultCount = document.getElementsByTagName('h2')[1],
-	error1 = document.getElementsByTagName('p')[0],
-	error2 = document.getElementsByTagName('p')[1],
+	error = document.getElementsByTagName('p')[0],
 	arrMagical = [], AllPermutator = [], magicalPermutator = [],
 	tmpArr, magicalAction, listIngredient;
 
@@ -30,25 +29,24 @@ form.addEventListener('submit', function(e){
 	e.preventDefault();
 	
 	if(ingredient.value.length >= 1 && ingredient.value.length < 20 ){
-		error1.style.display = 'none';
+		error.style.display = 'none';
 		tmpArr = ingredient.value.split(',');
 		if(tmpArr.length == 2){
-			error2.style.display = 'none';
 			magicalAction = tmpArr[1].trim();
 			arrMagical.push(magicalAction);
-
 			listIngredient = document.createElement('li');
 			listIngredient.innerText = ingredient.value;
 			listAll.appendChild(listIngredient);
 			btnResult.style.display = 'block';
 		}else{
-			error2.style.color = 'red';
-			error2.style.display = 'block';
+			error.innerText = 'Невалидни данни';
+			error.style.color = 'red';
+			error.style.display = 'block';
 		}
 	}else{
-		error1.style.color = 'red';
-		error1.style.display = 'block';
-		error2.style.display = 'none';
+		error.innerText = '1 ≤ ingredients.length < 20';
+		error.style.color = 'red';
+		error.style.display = 'block';
 	}
 }, false);
 
