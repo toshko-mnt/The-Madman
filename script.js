@@ -32,6 +32,7 @@ form.addEventListener('submit', function(e){
 		error.style.display = 'none';
 		tmpArr = ingredient.value.split(',');
 		if(tmpArr.length == 2){
+			listAll.children[0].style.display = 'none';
 			magicalAction = tmpArr[1].trim();
 			arrMagical.push(magicalAction);
 			listIngredient = document.createElement('li');
