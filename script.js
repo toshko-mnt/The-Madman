@@ -4,6 +4,7 @@ var form = document.getElementsByTagName('form')[0],
 	listAll = document.getElementsByTagName('ul')[0],
 	btnResult = document.getElementsByTagName('input')[2],
 	resultCount = document.getElementsByTagName('h2')[1],
+	imgElement = document.getElementsByTagName('img')[0],
 	error = document.getElementsByTagName('p')[0],
 	arrMagical = [], AllPermutator = [], magicalPermutator = [],
 	tmpArr, magicalAction, listIngredient;
@@ -67,7 +68,12 @@ btnResult.addEventListener('click', function(e){
 		}
 	}
 	//console.log(magicalPermutator);
-	resultCount.innerText = magicalPermutator.length;
+	resultCount.innerText = 'Опазихте света за ' + magicalPermutator.length + ' дни!';
+	if(magicalPermutator.length > 0){
+		imgElement.setAttribute('src' , 'logo1.jpg');
+	}else{
+		imgElement.setAttribute('src' , 'logo2.jpg');
+	}
 	magicalPermutator = [];
 }, false);
 
