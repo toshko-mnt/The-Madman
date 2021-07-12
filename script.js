@@ -35,19 +35,19 @@ form.addEventListener('submit', function(e){
 		if(tmpArr.length == 2){
 			listAll.children[0].style.display = 'none';
 			magicalAction = tmpArr[1].trim();
-			arrMagical.push(magicalAction);
-			listIngredient = document.createElement('li');
-			listIngredient.innerText = ingredient.value;
-			listAll.appendChild(listIngredient);
-			btnResult.style.display = 'block';
+			if(magicalAction.length > 0){
+				arrMagical.push(magicalAction);
+				listIngredient = document.createElement('li');
+				listIngredient.innerText = ingredient.value;
+				listAll.appendChild(listIngredient);
+				btnResult.style.display = 'block';
+			}
 		}else{
 			error.innerText = 'Невалидни данни';
-			error.style.color = 'red';
 			error.style.display = 'block';
 		}
 	}else{
 		error.innerText = '1 ≤ ingredients.length < 20';
-		error.style.color = 'red';
 		error.style.display = 'block';
 	}
 }, false);
