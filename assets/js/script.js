@@ -7,7 +7,7 @@ var form = document.getElementsByTagName('form')[0],
 	imgElement = document.getElementsByTagName('img')[0],
 	error = document.getElementsByTagName('p')[0],
 	arrMagical = [], AllPermutator = [], magicalPermutator = [],
-	tmpArr, magicalAction, listIngredient;
+	tmpArr, magicalAction, listIngredient, days;
 
 function permutator(inputArr) {
 	let results = [];
@@ -68,12 +68,16 @@ btnResult.addEventListener('click', function(e){
 		}
 	}
 	//console.log(magicalPermutator);
-	resultCount.innerText = 'Опазихте света за ' + magicalPermutator.length + ' дни!';
+	days = ' дни!';
 	if(magicalPermutator.length > 0){
 		imgElement.setAttribute('src' , 'assets/img/logo1.jpg');
+		if(magicalPermutator.length == 1){
+			days = ' ден!';
+		}
 	}else{
 		imgElement.setAttribute('src' , 'assets/img/logo2.jpg');
 	}
+	resultCount.innerText = 'Предпазихте света за ' + magicalPermutator.length + days;
 	magicalPermutator = [];
 }, false);
 
