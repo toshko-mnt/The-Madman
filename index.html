@@ -5,22 +5,22 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="w3.css">
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div class="w3-grey " style="padding:20px 50px;background-image:url('pic_boat_portrait.jpg');
-		background-size:cover;">
+		<div class="w3-grey " style="padding:20px 50px;	background-size:cover;">
 		<div class="w3-section w3-row-padding">
 		  <div class="w3-third w3-animate-zoom">
 			<div class="w3-card-4">
 			  <div class="w3-display-container">
-				<img src="logo.jpg" alt="logo" style="width:100%">        
+				<img src="logo.jpg" alt="logo">        
 			  </div>
 			</div>
 		  </div>
 		  <div class="w3-twothird w3-container w3-center w3-animate-zoom">
 			<div class="w3-card-4">
 				<div class="w3-container">
-				<h1 class="w3-jumbo w3-text-grey" style="text-shadow:1px 1px 0 #444">The Madman</h1>
+				<h1 class="w3-jumbo w3-text-grey" style="text-shadow:4px 1px 0 #444">The Madman</h1>
 				</div>
 			</div>
 			<div class="w3-card-4 w3-section">
@@ -29,19 +29,19 @@
 				<form method="post" action="">
 					<label for="ingredient">Добавете съставка</label></br>
 					<input id="ingredient" type="text" name="ingredients" />
-					<input type="submit" name="submit" value="Добавяне" />
-					<p></p>			
+					<input class="w3-button w3-blue w3-round-large" type="submit" name="submit" value="Добавяне" />
+					<p class="error"></p>			
 				</form>
 				<div>
 					<h2>Списък на съставки:</h2>
 					<ul>
 						<li>Списъкът е празен</li>
 					</ul>
-					<input style="display: none" type="submit" name="result" value="result"/>
+					<input type="submit" name="result" value="Покажи резултата" class="btn-result w3-button w3-green w3-round-large"/>
 				</div>
 			  </div>
 			</div>
-			<div id="endResult" class="w3-card-4 w3-section w3-white">
+			<div class="w3-card-4 w3-section w3-white">
 				<h2></h2>
 			</div>
 		  </div>
@@ -49,6 +49,7 @@
 		<footer class="w3-container">
 		  <p>Powered by Toshko</p>
 		</footer>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="script.js"></script>
 	</body>
 </html>
